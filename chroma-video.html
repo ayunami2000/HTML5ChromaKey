@@ -8,9 +8,9 @@
     <link href="chroma-video.css" rel="stylesheet">
     <script>window.hideTimer=setTimeout(function(){},2500);</script>
 </head>
-<body onload="draw();" onmousemove="window.clearTimeout(window.hideTimer);document.getElementById('source').style.opacity!='1.0'?document.getElementById('source').style.opacity='0.5':document.getElementById('source').style.opacity='1.0';window.hideTimer=window.setTimeout(function(){document.getElementById('source').style.opacity='0.0';},2500);">
+<body onload="draw();">
 <div id="wrapper" class="clearfix">
-    <div id="output">
+    <div id="output" onmousemove="window.clearTimeout(window.hideTimer);document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.getElementById('source').style.opacity='0.0';},2500);">
         <p>Canvas output</p>
         <canvas id="videoscreen">
             <p>Sorry your browser does not support HTML5</p>
