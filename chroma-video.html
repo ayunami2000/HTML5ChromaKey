@@ -12,7 +12,9 @@
 <div id="wrapper" class="clearfix">
     <div id="open">
         <p>Choose a video to add green screen effect to:</p>
-        <input id="file" type="file"/> or <button onclick="this.parentElement.style.display='none';">Use sample</button>
+        <input onchange="document.getElementById('videodata').srcObject=this.files[0];this.parentElement.style.display='none';" type="file"/> or <button onclick="this.parentElement.style.display='none';">Use sample</button>
+        <p>Choose a background video:</p>
+        <input onchange="document.getElementById('videoBackgrounddata').srcObject=this.files[0];this.parentElement.style.display='none';" type="file"/> or <button onclick="this.parentElement.style.display='none';">Use sample</button>
     </div>
     <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='initial';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
         <canvas id="videoscreen"><p>Sorry, but your browser does not support HTML5. :(</p></canvas>
