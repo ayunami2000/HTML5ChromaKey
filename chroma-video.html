@@ -10,7 +10,7 @@
 </head>
 <body onload="draw();" ontouchstart="" ontouchend="" onmousedown="" onmouseup="">
 <div id="wrapper" class="clearfix">
-    <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);this.style.cursor='pointer';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.getElementById('source').style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
+    <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='pointer';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
         <p>Canvas output</p>
         <canvas id="videoscreen">
             <p>Sorry your browser does not support HTML5</p>
