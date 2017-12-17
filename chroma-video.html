@@ -14,7 +14,7 @@
         <p>Choose a video to add green screen effect to:</p>
         <input onchange="document.getElementById('videodata').src=window.URL.createObjectURL(files[0]);" type="file"/> or <button onclick="document.getElementById('videodata').src='PixieGreenScreen539_512kb.mp4';">Use sample</button>
         <p>Choose a background video:</p>
-        <input onchange="document.getElementById('videoBackgrounddata').src=window.URL.createObjectURL(files[0]);" type="file"/> or <button onclick="document.getElementById('videodata').src='clouds_512kb.mp4';">Use sample</button>
+        <input onchange="document.getElementById('videoBackgrounddata').src=window.URL.createObjectURL(files[0]);" type="file"/> or <button onclick="document.getElementById('videoBackgrounddata').src='clouds_512kb.mp4';">Use sample</button>
         <br><button onclick="this.parentElement.style.display='none';">OK!</button>
     </div>
     <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='initial';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
