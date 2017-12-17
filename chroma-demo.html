@@ -10,7 +10,7 @@
     <link href="chroma-demo.css" rel="stylesheet">
 
 </head>
-<body onload="(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream)?window.ontouchstart=function(e){document.querySelector('video').play();this.ontouchstart=function(e){};}:document.querySelector('video').play();draw();">
+<body onload="(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream)?window.ontouchstart=function(e){document.getElementById('videodata').play();this.ontouchstart=function(e){};}:document.getElementById('videodata').play();draw();">
 hello.
 <div id="wrapper">
     <div id="output">
@@ -21,8 +21,9 @@ hello.
     </div>
     <div id="source">
         <video style="" id="videodata" loop="loop" preload="auto" width="320" height="180">
-            <source src="PixieGreenScreen539_512kb.mp4" type='video/mp4' />
-            <source src="PixieGreenScreen539.ogv" type='video/ogg' />
+            <source src="http://sharon-kasper.com/sharon/chroma/PixieGreenScreen539_512kb.mp4" type='video/mp4' />
+            <source src="http://sharon-kasper.com/sharon/chroma/PixieGreenScreen539.ogv" type='video/ogg' />
+            <source src="http://sharon-kasper.com/sharon/chroma/PixieGreenScreen539.m4v" type='video/mp4' />
         </video>  
     </div>
 </div>
