@@ -12,19 +12,20 @@
 <div id="wrapper" class="clearfix">
     <div id="open">
         <p>Choose a video to add green screen effect to:</p>
-        <input onchange="document.getElementById('videodata').srcObject=this.files[0];this.parentElement.style.display='none';" type="file"/> or <button onclick="this.parentElement.style.display='none';">Use sample</button>
+        <input onchange="document.getElementById('videodata').src=window.URL.createObjectURL(files[0]);" type="file"/> or <button onclick="document.getElementById('videodata').src='PixieGreenScreen539_512kb.mp4';">Use sample</button>
         <p>Choose a background video:</p>
-        <input onchange="document.getElementById('videoBackgrounddata').srcObject=this.files[0];this.parentElement.style.display='none';" type="file"/> or <button onclick="this.parentElement.style.display='none';">Use sample</button>
+        <input onchange="document.getElementById('videoBackgrounddata').src=window.URL.createObjectURL(files[0]);" type="file"/> or <button onclick="document.getElementById('videodata').src='clouds_512kb.mp4';">Use sample</button>
+        <br><button onclick="this.parentElement.style.display='none';">OK!</button>
     </div>
     <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='initial';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
         <canvas id="videoscreen"><p>Sorry, but your browser does not support HTML5. :(</p></canvas>
     </div>
     <div id="source" style="opacity:0.0;" onmouseleave="this.style.opacity='0.5';" onmouseenter="this.style.opacity='1.0';">
-        <video onplay="document.getElementById('videoBackgrounddata').play()" onpause="document.getElementById('videoBackgrounddata').pause()" style="" id="videodata" loop="loop" preload="auto" width="320" height="180" src="PixieGreenScreen539_512kb.mp4" controls></video>  
+        <video onloadeddata="window.URL.revokeObjectURL(this.src);" onplay="document.getElementById('videoBackgrounddata').play()" onpause="document.getElementById('videoBackgrounddata').pause()" style="" id="videodata" loop="loop" preload="auto" width="320" height="180" src="PixieGreenScreen539_512kb.mp4" controls></video>  
     </div>
         <div id="backgroundvideo" style="display: none;">
         <p>Background Video</p>
-        <video style="" id="videoBackgrounddata" loop="" preload="auto" width="320" height="180" src="clouds_512kb.mp4" playsinline>
+        <video onloadeddata="window.URL.revokeObjectURL(this.src);" style="" id="videoBackgrounddata" loop="" preload="auto" width="320" height="180" src="clouds_512kb.mp4" playsinline>
         </video>
     </div>
 </div>
