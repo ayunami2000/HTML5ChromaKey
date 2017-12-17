@@ -39,3 +39,13 @@ canvas {
 video {
     border: 1px solid #000;
 }
+#open{
+    z-index:99999;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-image:url("darknoise.png");
+    background-color:rgb(33,33,33);
+}
