@@ -8,16 +8,16 @@
     <link href="chroma-video.css" rel="stylesheet">
     <script>window.hideTimer=setTimeout(function(){},2500);</script>
 </head>
-<body onload="draw();">
+<body onload="draw();" ontouchstart="" ontouchend="" onmousedown="" onmouseup="">
 <div id="wrapper" class="clearfix">
-    <div id="output" onmousemove="window.clearTimeout(window.hideTimer);document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.getElementById('source').style.opacity='0.0';},2500);">
+    <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);this.style.cursor='pointer';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.getElementById('source').style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
         <p>Canvas output</p>
         <canvas id="videoscreen">
             <p>Sorry your browser does not support HTML5</p>
         </canvas>
     </div>
     <div id="source" style="opacity:0.0;" onmouseleave="this.style.opacity='0.5';" onmouseenter="this.style.opacity='1.0';">
-        <video style="" id="videodata" loop="loop" preload="auto" width="320" height="180" controls>
+        <video onplay="document.getElementById('videoBackgrounddata').play()" onpause="document.getElementById('videoBackgrounddata').pause()" style="" id="videodata" loop="loop" preload="auto" width="320" height="180" controls>
             <source src="PixieGreenScreen539_512kb.mp4" type='video/mp4' />
             <source src="PixieGreenScreen539.ogv" type='video/ogg' />
             <source src="PixieGreenScreen539.m4v" type='video/mp4' />
