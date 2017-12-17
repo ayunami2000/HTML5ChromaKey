@@ -11,7 +11,7 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
 
 </head>
-<body onload="draw();">
+<body onload="(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream)?(window.ontouchstart=document.querySelector('video').play()):(document.querySelector('video').play());draw();">
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
