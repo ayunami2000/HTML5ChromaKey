@@ -10,7 +10,7 @@
     <link href="chroma-demo.css" rel="stylesheet">
 
 </head>
-<body onload="/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream?(window.ontouchstart=document.querySelector('video').play()):(document.querySelector('video').play());draw();">
+<body onload="(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream)?window.ontouchstart=function(e){document.querySelector('video').play();this.ontouchstart=function(e){};}:document.querySelector('video').play();draw();">
 hello.
 <div id="wrapper">
     <div id="output">
