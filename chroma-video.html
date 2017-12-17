@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
 <head>
-    <title>HTML 5 Chroma Key</title>
+    <title>HTML5 Chroma Key</title>
     <meta charset="utf-8">        
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="chroma-video.js"></script>
     <link href="chroma-video.css" rel="stylesheet">
-    <script>window.hideTimer=setTimeout(function(){},2500);</script>
 </head>
 <body onload="draw();" ontouchstart="" ontouchend="" onmousedown="" onmouseup="">
+<script>window.hideTimer=setTimeout(function(){},2500);</script>
 <div id="wrapper" class="clearfix">
-    <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='pointer';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
+    <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='initial';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
         <p>Canvas output</p>
         <canvas id="videoscreen">
-            <p>Sorry your browser does not support HTML5</p>
+            <p>Sorry, but your browser does not support HTML5. :(</p>
         </canvas>
     </div>
     <div id="source" style="opacity:0.0;" onmouseleave="this.style.opacity='0.5';" onmouseenter="this.style.opacity='1.0';">
