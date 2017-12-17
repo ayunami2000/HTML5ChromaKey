@@ -1,7 +1,8 @@
 body {
     font-family:Verdana;
     font-size:12px;
-    background-color:gray;
+    background-image:url("darknoise.png");
+    background-color:rgb(33,33,33);
     color:white;
 }
 h1 {
