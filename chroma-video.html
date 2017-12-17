@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="chroma-video.js"></script>
     <link href="chroma-video.css" rel="stylesheet">
+    <script>window.hideTimer=setTimeout(function(){},2500);</script>
 </head>
-<body onload="draw();">
+<body onload="draw();" onmousemove="window.clearTimeout(window.hideTimer);document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.getElementById('source').style.opacity='0.0';},2500);">
 <div id="wrapper" class="clearfix">
     <div id="output">
         <p>Canvas output</p>
