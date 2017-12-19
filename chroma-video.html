@@ -16,7 +16,7 @@
         <p>Choose a background video:</p>
         <input onchange="document.getElementById('videoBackgrounddata').src=window.URL.createObjectURL(files[0]);" type="file"/> or <button onclick="document.getElementById('videoBackgrounddata').src='clouds_512kb.mp4';">Use sample</button>
         <br><input type="checkbox" onchange="document.getElementById('videoBackgrounddata').muted=this.checked;" checked/> Mute background video's audio?
-        <br><button onclick="if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){doument.getElementById("videodata").playsinline=true;}this.parentElement.style.display='none';">OK!</button>
+        <br><button onclick="if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){doument.getElementById('videodata').playsinline=true;}this.parentElement.style.display='none';">OK!</button>
     </div>
     <div onclick="document.getElementById('videodata').paused?document.getElementById('videodata').play():document.getElementById('videodata').pause();" id="output" onmousemove="window.clearTimeout(window.hideTimer);document.body.style.cursor='initial';document.getElementById('source').style.opacity='0.5';window.hideTimer=window.setTimeout(function(){document.body.style.cursor='none';document.getElementById('source').style.opacity='0.0';},2500);">
         <canvas id="videoscreen"><p>Sorry, but your browser does not support HTML5. :(</p></canvas>
